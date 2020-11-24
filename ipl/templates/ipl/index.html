@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+  <head>
+  <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cricket Prediction</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+option:hover {
+    background-color: orange !important;
+}
+      body, div, form, input, select {
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+      h1, h4 {
+      margin: 15px 0 4px;
+      font-weight: 400;
+color:white;
+      }
+      h4 {
+      margin: 20px 0 4px;
+      font-weight: 400;
+      }
+      span {
+      color: red;
+      }
+      .small {
+      font-size: 10px;
+      line-height: 18px;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 3px;
+      }
+      form {
+      width: 45%;
+  margin-top:20px;
+      padding: 20px;
+
+      box-shadow: 0 2px 5px #ccc;
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      vertical-align: middle;
+      }
+      input:hover, textarea:hover, select:hover {
+      outline: none;
+      border: 1px solid #095484;
+      background: #e6eef7;
+      }
+      .title-block select, .title-block input {
+      margin-bottom: 10px;
+      }
+      select {
+      padding: 7px 0;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      background: transparent;
+color:white;
+      }
+      select, table {
+      width: 100%;
+      }
+      option {
+      color:black;
+
+      }
+      .day-visited, .time-visited {
+      position: relative;
+      }
+      input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      input[type="time"]::-webkit-inner-spin-button {
+      margin: 2px 22px 0 0;
+      }
+      .day-visited i, .time-visited i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      top: 8px;
+      font-size: 20px;
+      }
+      .day-visited i, .time-visited i {
+      right: 5px;
+      z-index: 1;
+      color: #a9a9a9;
+      }
+      [type="date"]::-webkit-calendar-picker-indicator {
+      right: 0;
+      z-index: 2;
+      opacity: 0;
+      }
+      .question-answer label {
+      display: block;
+      padding: 0 20px 10px 0;
+      }
+      .question-answer input {
+      width: auto;
+      margin-top: -2px;
+      }
+      th, td {
+      width: 18%;
+      padding: 15px 0;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+      vertical-align: unset;
+      line-height: 18px;
+      font-weight: 400;
+      word-break: break-all;
+      }
+      .first-col {
+      width: 25%;
+      text-align: left;
+      }
+      textarea {
+      width: calc(100% - 6px);
+      }
+      .btn-block {
+      margin-top: 20px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      background-color: #095484;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background-color: #0666a3;
+      }
+      @media (min-width: 568px) {
+      .title-block {
+      display: flex;
+      justify-content: space-between;
+      }
+      .title-block select {
+      width: 30%;
+      margin-bottom: 0;
+      }
+      .title-block input {
+      width: 31%;
+      margin-bottom: 0;
+      }
+      th, td {
+      word-break: keep-all;
+      }
+      }
+	  body{
+	  background-color:#1a1a1a
+	  }
+    </style>
+  </head>
+   <div class="testbox">
+      <form action="" method="post">
+        <h1>Cricket Prediction </h1>
+        <h4>Home Team<span>*</span></h4>
+        <select name='Home'>
+          <option value=""></option>
+          <option value="MI">Mumbai Indians</option>
+          <option value="CSK">Chennai Super Kings</option>
+          <option value="DC">Delhi Capitals</option>
+          <option value="KXIP">Kings XI Punjab</option>
+          <option value="KKR">Kolkata Knight Riders</option>
+          <option value="RR">Rajasthan Royals</option>
+          <option value="SRH">Sunrisers Hyderabad</option>
+          <option value="RCB">Royal Challengers Bangalore</option>
+        </select>
+        <h4>Away Team<span>*</span></h4>
+        <select name='Away'>
+          <option value=""></option>
+          <option value="MI">Mumbai Indians</option>
+          <option value="CSK">Chennai Super Kings</option>
+          <option value="DC">Delhi Capitals</option>
+          <option value="KXIP">Kings XI Punjab</option>
+          <option value="KKR">Kolkata Knight Riders</option>
+          <option value="RR">Rajasthan Royals</option>
+          <option value="SRH">Sunrisers Hyderabad</option>
+          <option value="RCB">Royal Challengers Bangalore</option>
+        </select>
+        <h4>City<span>*</span></h4>
+        <select name='city'>
+          <option value=""></option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Bangalore">Bangalore</option>
+          <option value="Chennai">Chennai</option>
+          <option value="Kolkata">Kolkata</option>
+          <option value="Pune">Pune</option>
+          <option value="Hyderabad">Hyderabad	</option>
+          <option value="Chandigarh">Chandigarh</option>
+          <option value="Jaipur">Jaipur</option>
+          <option value="Kochi">Kochi</option>
+          <option value="Jaipur">Jaipur</option>
+          <option value="Dharmasala">Dharmasala</option>
+          <option value="Visakhapatnam">Visakhapatnam</option>
+		  <option value="Dubai">Dubai</option>
+		  <option value="Abu Dhabi">Abu Dhabi</option>
+		  <option value="Sharjah">Sharjah</option>
+        </select>
+        <h4>Toss Winner<span>*</span></h4>
+        <select name='toss_winner'>
+          <option value=""></option>
+          <option value="Home Team">Home Team</option>
+          <option value="Away Team">Away Team</option>
+        </select>
+        <h4>Toss Decision<span>*</span></h4>
+        <select name='toss_decision'>
+          <option value=""></option>
+          <option value="bat">Bat</option>
+          <option value="field">Field</option>
+        </select>
+        <div class="btn-block">
+          <button type="submit" href="/">Submit</button>
+        </div>
+      </form>
+    </div>
+ <div class="testbox">
+<div style="
+    width: 45%;
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 5px #ccc;
+    color: #99ff66;
+	font-size: 22px;
+	text-align: center;
+"> {{a}} </div>
+</div
+  </body>
+  </body>
+</html>
