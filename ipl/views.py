@@ -11,7 +11,7 @@ import pandas as pd
 def pred(home_team, away_team, city, toss_winner, toss_decision):
     results = convert_to_numerical_field(home_team, away_team, city, toss_winner, toss_decision)
     print(results)
-    dbfile = open(r'C:\Users\paras\Desktop\Final_heroku\app\model.pkl', 'rb')    
+    dbfile = open(r'/app/model.pkl', 'rb')    
     db = pk.load(dbfile)
     #y_pred=model.predict([results])
     y_pred=db.predict([results])
@@ -215,7 +215,7 @@ def convert_to_numerical_field(home_team, away_team, city, toss_winner, toss_dec
         
     return list    
     
-ef_data = pd.read_csv(r'C:\Users\paras\Desktop\Final_heroku\app\_team_rank.csv')
+ef_data = pd.read_csv(r'/app/_team_rank.csv')
 
 ef_data.replace(['Mumbai Indians','Kolkata Knight Riders','Royal Challengers Bangalore','Deccan Chargers','Chennai Super Kings',
                  'Rajasthan Royals','Delhi Daredevils','Delhi Capitals','Gujarat Lions','Kings XI Punjab',
